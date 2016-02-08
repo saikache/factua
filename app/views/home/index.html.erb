@@ -1,2 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Enter for search</h1>
+<hr>
+<form action="/home/index" method="get">
+  
+<input type="text" name="get_data">
+<button>Get Info</button>
+</form>
+
+
+<hr>
+<%unless @result.blank?%>
+  <%@result.each do |single_result| %>
+    <%= single_result['address']%><br>
+    <%= single_result['email']%><br>
+    <%= single_result['fax']%><br>
+    <%= single_result['name']%><br>
+    <%= single_result['tel']%><br>
+    <a href="<%= single_result['website']%>" target=' '><%= single_result['website']%></a>
+
+    <br>
+<hr>
+  <%end%>
+<%end%>
