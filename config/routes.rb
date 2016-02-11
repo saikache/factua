@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :ches
+
   root 'home#index'
   get 'home/index'
 
